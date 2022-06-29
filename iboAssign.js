@@ -85,20 +85,29 @@ function getUniqueProductCount(prodList) {
 
 function getUniquePrducts(prodList) {
 
-    let uniqueProds = {};
+    let prodCount =  getUniqueProductCount(listOfProducts)
+    
+    let uniqueProds = [];
+    
     prodList.forEach((prod) => {
         
     
-        if (uniqueProds.includes(prod   )) {
-          uniqueProds[prodName] += prod.quantity;
-        } else {
-          uniqueProds[prodName] = prod.quantity;
+        if (!uniqueProds.includes(prod)) {
+            console.log(prod)
+            //prod.quantity = prodCount[prod.prodName];
+          //uniqueProds.push(prod);
+
         }
       });
-    
+
+  
       return uniqueProds;
 
 }
 
-
+//print uniqueProduct Count
 console.log(getUniqueProductCount(listOfProducts));
+
+//Print UniqProducts
+
+console.log(getUniquePrducts(listOfProducts));
