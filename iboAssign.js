@@ -89,7 +89,7 @@ function getUniquePrducts(prodList) {
     prodList.forEach((prod) => {
         
     
-        if (uniqueProds.includes(prod)) {
+        if (uniqueProds.includes(prod   )) {
           uniqueProds[prodName] += prod.quantity;
         } else {
           uniqueProds[prodName] = prod.quantity;
@@ -99,3 +99,6 @@ function getUniquePrducts(prodList) {
       return uniqueProds;
 
 }
+
+
+console.log(getUniqueProductCount(listOfProducts));
