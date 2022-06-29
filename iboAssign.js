@@ -87,21 +87,30 @@ function getUniquePrducts(prodList) {
 
     let prodCount =  getUniqueProductCount(listOfProducts)
     
-    let uniqueProds = [];
+    let uniqueProd = [];
     
     prodList.forEach((prod) => {
         
-    
-        if (!uniqueProds.includes(prod)) {
-            console.log(prod)
-            //prod.quantity = prodCount[prod.prodName];
-          //uniqueProds.push(prod);
+        let unique = true;
 
-        }
+        uniqueProd?.forEach(item=>{
+            if(item.prodName == prod.prodName){
+                
+                unique = false
+                
+            }
+        })
+
+        if(uniqueProd) uniqueProd.push(prod)
       });
 
+      let updateProdQuantity = uniqueProd.map(item=>{
+        item.quantity = prodCount[item.prodName];
+        return item;
+      })
+
   
-      return uniqueProds;
+      return updateProdQuantity;
 
 }
 
